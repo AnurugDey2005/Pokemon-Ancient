@@ -144,6 +144,36 @@
 
 ---
 
+---
+
+### Phase 12: Battle Dynamics, Modern Rival Battle Overhaul & QoL Furnishing (Completed)
+- **Rival Starter Synergy & Type Matchups Completed**:
+  - Replaced vanilla starter encounters across all 30 rival definitions in `src/data/trainers.party`:
+    - **Player chose Frillsprout (Grass)**: Rival counters with **Pyroraptor** (Fire, Level 5: Scratch, Leer, Ember) on Route 103, scaling to **Ignisaurus** on Route 110, and **Apex Tyrannovore** on Route 119 and Lilycove.
+    - **Player chose Pyroraptor (Fire)**: Rival counters with **Plesioling** (Water, Level 5: Pound, Growl, Water Gun) on Route 103, scaling to **Elasmostorm** on Route 110, and **Mosasurge** on Route 119 and Lilycove.
+    - **Player chose Plesioling (Water)**: Rival counters with **Frillsprout** (Grass, Level 5: Tackle, Growl, Leafage) on Route 103, scaling to **Ferntops** on Route 110, and **Titanoceratops** on Route 119 and Lilycove.
+  - Upgraded Route 103 rival AI flags to competitive standard: `AI: Check Bad Move / Try To Faint / Check Viability`.
+  - Standardized all Rustboro rival AI lines to uniform `AI: Basic Trainer`.
+- **Prehistoric Starter Learnsets Refined (`src/data/pokemon/level_up_learnsets/ancient.h`)**:
+  - Standardized Stage 2 and Stage 3 evolution moves to Level 0 (`MOVE_ROCK_TOMB` on Ferntops and Ignisaurus; `MOVE_ICE_SHARD` on Elasmostorm; `MOVE_DRAGON_CLAW` on Apex Tyrannovore; `MOVE_FLASH_CANNON` on Mosasurge).
+  - Eliminated duplicate move entries at level 1/6 for Ferntops and Ignisaurus.
+- **Narrative & Romantic Rival Duality Overhauled (`data/maps/Route103/scripts.inc`)**:
+  - Rewrote Maya and Brendan Route 103 dialogues:
+    - Adorably shy, blushing, and flustered conversation revealing their secret romantic crush on the player outside combat.
+    - Fierce, passionate, and formidable battle stance in combat.
+    - Post-battle reaction with racing pulse, blushing cheeks, and asking to walk back to Camp Ambervale together.
+- **Modern ROM Hack Quality-of-Life (QoL) Activated**:
+  - Reusable TMs enabled in `include/config/item.h` (`I_REUSABLE_TMS TRUE`).
+  - Bag Evolution Items enabled in `include/config/item.h` (`I_USE_EVO_HELD_ITEMS_FROM_BAG TRUE`).
+  - Early Running Shoes granted immediately upon receiving starter in `LittlerootTown_ProfessorBirchsLab/scripts.inc` (`setflag FLAG_SYS_B_DASH`).
+  - Starting gift Poké Balls increased to 10 in Birch's Lab so players can immediately catch prehistoric wildlife on Amber Trail.
+- **Multi-Subagent Auditing Results**:
+  1. *Battle Dynamics Auditor*: 53 unique move constants verified against `include/constants/moves.h`. Evolution moves and stats validated.
+  2. *Script Continuity Auditor*: Verified `Route103`, `BirchsLab`, and `Route101` event flags (`FLAG_SYS_B_DASH`, `VAR_STARTER_MON` switch, lab warp). 100% verified & clean.
+  3. *Trainer Party Auditor*: Verified all 9 prehistoric species names and move casing in `trainers.party`. Traced and verified starter counter logic across all 5 rival locations.
+
+---
+
 ## 4. Current Status & Deliverables
 
 - [x] **Step 1**: Register the 3 Prehistoric Starter Species constants in `include/constants/species.h` (`SPECIES_FRILLSPROUT`, `SPECIES_PYRORAPTOR`, `SPECIES_PLESIOLING`) and their evolution stages.
@@ -155,6 +185,10 @@
 - [x] **Step 7**: Deploy full codebase to `AnurugDey2005/Pokemon-Ancient` on GitHub.
 - [x] **Step 8**: Successfully compiled `PokemonAncient.gba` in the cloud on GitHub Actions.
 - [x] **Step 9**: ROM binary and clean `.zip` archive verified and placed directly in `Downloads` folder for Google Drive/MediaFire upload and mobile play with ZArchiver.
+- [x] **Step 10**: Overhaul Route 103 & subsequent Rival battles with prehistoric starters, smart AI, and romantic crush dialogue.
+- [x] **Step 11**: Activate modern QoL settings (Reusable TMs, early running shoes, 10 gift Poké Balls).
+- [x] **Step 12**: Execute multi-subagent test runs across scripts, battle dynamic data, and cloud build.
+
 
 
 
