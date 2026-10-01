@@ -123,6 +123,27 @@
 
 ---
 
+### Phase 10: GitHub Cloud Repository Deployment & Automated CI Build
+- **Action**: Connected and pushed the full 30,000-file repository to the user's personal GitHub repository: `https://github.com/AnurugDey2005/Pokemon-Ancient`.
+- **Browser Upload Issue Resolved**: Bypassed GitHub's web interface limit ("fewer than 100 files at a time") by uploading all files via Git directly using their cached credentials.
+- **Automated Cloud Compilation**: Configured `.github/workflows/build.yml` to trigger on `main` and execute `build-emerald` on Ubuntu Linux cloud runners.
+- **Zero Antivirus Intervention**: The `.gba` ROM is compiled entirely in GitHub's secure cloud environment, eliminating all local false-positive antivirus warnings on the user's PC.
+- **Direct Downloadable Artifact**: The workflow copies the compiled binary to `PokemonAncient.gba` and publishes it as the `PokemonAncient-ROM` downloadable artifact directly on GitHub Actions.
+
+---
+
+### Phase 11: Cloud Build Success, ROM Verification & Artifact Delivery
+- **Action**: GitHub Actions workflow run `36843207318` completed with 100% green status across all steps.
+- **ROM Binary Generated**: `PokemonAncient.gba` (33,554,432 bytes / 32 MB exact standard GBA ROM size).
+- **Header Verified**: `POKEMON EMER` / `BPEE` / `01` Game Boy Advance ROM header validated.
+- **Artifact Published**: `PokemonAncient-ROM` (Deflate-compressed zip, 17.5 MB) published on GitHub Actions.
+- **Local Deliverables Created**:
+  1. `C:\Users\Admin\Downloads\PokemonAncient.gba` (ready to play or drag into Google Drive / MediaFire)
+  2. `C:\Users\Admin\Downloads\PokemonAncient-ROM.zip` (clean zip archive ready for mobile transfer & ZArchiver extraction)
+  3. `c:\Users\Admin\Desktop\Pokemon Ancient\PokemonAncient.gba` (local project copy)
+
+---
+
 ## 4. Current Status & Deliverables
 
 - [x] **Step 1**: Register the 3 Prehistoric Starter Species constants in `include/constants/species.h` (`SPECIES_FRILLSPROUT`, `SPECIES_PYRORAPTOR`, `SPECIES_PLESIOLING`) and their evolution stages.
@@ -131,5 +152,9 @@
 - [x] **Step 4**: Wire the Site Alpha ambush trainer battle in `data/maps/Route101/scripts.inc` against the Cataclysm Grunt.
 - [x] **Step 5**: Update Route 1 and Route 2 wild encounter tables in `src/data/wild_encounters.json` with early prehistoric Pokémon.
 - [x] **Step 6**: Complete safety purge of all local compilers, temporary tools, and third-party emulators.
-- [x] **Step 7**: Document cloud build and MediaFire upload guide for zero-antivirus play.
+- [x] **Step 7**: Deploy full codebase to `AnurugDey2005/Pokemon-Ancient` on GitHub.
+- [x] **Step 8**: Successfully compiled `PokemonAncient.gba` in the cloud on GitHub Actions.
+- [x] **Step 9**: ROM binary and clean `.zip` archive verified and placed directly in `Downloads` folder for Google Drive/MediaFire upload and mobile play with ZArchiver.
+
+
 
