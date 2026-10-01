@@ -122,16 +122,18 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
     trainerGen->localRngState = LocalRandomSeed(otID);
 }
 
+#include "constants/battle.h"
+
 static u8 GetPlayerPartyHighestLevel(void)
 {
     u8 maxLevel = 1;
     s32 i;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
-            && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) != SPECIES_NONE
+            && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG))
         {
-            u8 lvl = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+            u8 lvl = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_LEVEL);
             if (lvl > maxLevel)
                 maxLevel = lvl;
         }
