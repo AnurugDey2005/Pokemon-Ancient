@@ -1,5 +1,3 @@
-#include "level_up_learnsets/ancient.h"
-
 #ifdef __INTELLISENSE__
 const struct SpeciesInfo gSpeciesInfoAncient[] =
 {
