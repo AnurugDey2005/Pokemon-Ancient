@@ -299,7 +299,7 @@ Route103_Text_MayLetsBattle:
 	.string "…Hehe. When you look at me with those\n"
 	.string "determined eyes, I can't help getting fired up!\p"
 	.string "I've been training non-stop, {PLAYER}{KUN}.\n"
-	.string "In battle, I don't hold back for anyone—\l"
+	.string "In battle, I don't hold back for anyone--\l"
 	.string "not even the person I…\p"
 	.string "A-anyway! Let's see what you and your\n"
 	.string "ancient partner can do! En garde!$"
@@ -333,7 +333,7 @@ Route103_Text_BrendanLetsBattle:
 	.string "your eyes makes my pulse race.\p"
 	.string "I take my battles seriously, {PLAYER}.\n"
 	.string "I'm not pulling punches just because\n"
-	.string "it's you—in fact, I want to show you\l"
+	.string "it's you--in fact, I want to show you\l"
 	.string "how strong I can be!\p"
 	.string "Let's go, {PLAYER}! Show me that passion!$"
 
