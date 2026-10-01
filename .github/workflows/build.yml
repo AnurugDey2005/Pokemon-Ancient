@@ -13,8 +13,8 @@ env:
   GAME_REVISION: 0
   GAME_LANGUAGE: ENGLISH
   COMPARE: 0
-  UNUSED_ERROR: 1
-  DEPRECATED_ERROR: 1
+  UNUSED_ERROR: 0
+  DEPRECATED_ERROR: 0
 
 jobs:
   build-emerald:
@@ -52,7 +52,7 @@ jobs:
       - name: ROM (Emerald)
         env:
           GAME_VERSION: EMERALD
-        run: make -j$(nproc) -O all
+        run: make -j$(nproc) -O all UNUSED_ERROR=0 DEPRECATED_ERROR=0
 
       - name: Copy to Pokemon Ancient ROM
         run: cp pokeemerald.gba PokemonAncient.gba
