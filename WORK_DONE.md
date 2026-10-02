@@ -234,9 +234,51 @@
 - [x] **Step 8**: Successfully compiled `PokemonAncient.gba` in the cloud on GitHub Actions.
 - [x] **Step 9**: ROM binary and clean `.zip` archive verified and placed directly in `Downloads` folder for Google Drive/MediaFire upload and mobile play with ZArchiver.
 - [x] **Step 10**: Overhaul Route 103 & subsequent Rival battles with prehistoric starters, smart AI, and romantic crush dialogue.
+### Phase 14: Desktop Project Architecture & Folder Sorting Optimization
+- **User Instruction & Structural Plan**:
+  - The user requested organizing `c:\Users\Admin\Desktop\Pokemon Ancient` so it is clean, beautifully structured, and sorted into specific folders, without modifying any game code or renaming files.
+  - Selected Option: Dedicated top-level folders for player deliverables and documentation, maintaining full compatibility with the GBA decompilation engine and GitHub Actions cloud build.
+  - **Structure Blueprint**:
+    - `01_PLAYABLE_GAME/`: High-visibility folder containing the compiled `PokemonAncient.gba`, the one-click launcher `Run_Pokemon_Ancient.bat`, and `HOW_TO_PLAY_AND_DOWNLOAD.md`.
+    - `02_PROJECT_DOCUMENTATION/`: High-visibility folder containing `FEATURES.md`, `CREDITS.md`, `CONTRIBUTING.md`, and `INSTALL.md`.
+    - `dev_scripts/`: Clean consolidation of loose development scripts (`asmdiff.ps1`, `asmdiff.sh`).
+- **Implementation Audit & Results**:
+  1. `01_PLAYABLE_GAME/` created and populated with:
+     - `PokemonAncient.gba` (Clean 32MB GBA ROM ready for instant emulator launch)
+     - `Run_Pokemon_Ancient.bat` (Quick launcher script)
+     - `HOW_TO_PLAY_AND_DOWNLOAD.md` (Step-by-step emulator and ZArchiver mobile extraction guide)
+  2. `02_PROJECT_DOCUMENTATION/` created and populated with:
+     - `FEATURES.md`
+     - `CREDITS.md`
+     - `CONTRIBUTING.md`
+     - `INSTALL.md`
+  3. `dev_scripts/` cleaned and consolidated with:
+     - `asmdiff.ps1`, `asmdiff.sh`, and `build_tools.sh`
+  4. Root Workspace Cleaned:
+     - Duplicate launcher and guide files removed from root.
+     - `README.md` updated with top-level navigation directory links.
+     - Decompilation engine files (`Makefile`, `charmap.txt`, `config.mk`, `*.mk`, `check_history.sh`) preserved untouched to guarantee 100% build stability.
+
+---
+
+## 4. Current Status & Deliverables
+
+- [x] **Step 1**: Register the 3 Prehistoric Starter Species constants in `include/constants/species.h` (`SPECIES_FRILLSPROUT`, `SPECIES_PYRORAPTOR`, `SPECIES_PLESIOLING`) and their evolution stages.
+- [x] **Step 2**: Add base stats, typing, abilities, and level-up learnsets into `src/data/pokemon/species_info/`.
+- [x] **Step 3**: Link starters into `src/starter_choose.c` so the starter selection screen offers Frillsprout, Pyroraptor, and Plesioling.
+- [x] **Step 4**: Wire the Site Alpha ambush trainer battle in `data/maps/Route101/scripts.inc` against the Cataclysm Grunt.
+- [x] **Step 5**: Update Route 1 and Route 2 wild encounter tables in `src/data/wild_encounters.json` with early prehistoric Pokémon.
+- [x] **Step 6**: Complete safety purge of all local compilers, temporary tools, and third-party emulators.
+- [x] **Step 7**: Deploy full codebase to `AnurugDey2005/Pokemon-Ancient` on GitHub.
+- [x] **Step 8**: Successfully compiled `PokemonAncient.gba` in the cloud on GitHub Actions.
+- [x] **Step 9**: ROM binary and clean `.zip` archive verified and placed directly in `Downloads` folder for Google Drive/MediaFire upload and mobile play with ZArchiver.
+- [x] **Step 10**: Overhaul Route 103 & subsequent Rival battles with prehistoric starters, smart AI, and romantic crush dialogue.
 - [x] **Step 11**: Activate modern QoL settings (Reusable TMs, early running shoes, 10 gift Poké Balls).
 - [x] **Step 13**: Conduct comprehensive research on human ROM hack sprite creation, palette indexing, two-tone grey transparency grid, and GBA PPU hardware transparency.
 - [x] **Step 14**: Guarantee zero white rectangular boxes in-game on all Pokémon sprites and battle scenes.
+- [x] **Step 15**: Implement clean folder sorting (`01_PLAYABLE_GAME`, `02_PROJECT_DOCUMENTATION`, `dev_scripts` consolidation) for Desktop workspace.
+
+
 
 
 
