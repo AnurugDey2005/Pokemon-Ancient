@@ -472,13 +472,16 @@ static const union AffineAnimCmd *const sSpriteAffineAnimTable_PlayerShrink[] =
     sSpriteAffineAnim_PlayerShrink
 };
 
+static const u8 sText_LeoOption[] = _("LEO");
+static const u8 sText_MayaOption[] = _("MAYA");
+
 static const struct MenuAction sMenuActions_Gender[] = {
-    {gText_Boy, {NULL}},
-    {gText_Girl, {NULL}}
+    {sText_LeoOption, {NULL}},
+    {sText_MayaOption, {NULL}}
 };
 
 static const u8 *const sMalePresetNames[] = {
-    COMPOUND_STRING("STU"),
+    COMPOUND_STRING("LEO"),
     COMPOUND_STRING("MILTON"),
     COMPOUND_STRING("TOM"),
     COMPOUND_STRING("KENNY"),
@@ -501,7 +504,7 @@ static const u8 *const sMalePresetNames[] = {
 };
 
 static const u8 *const sFemalePresetNames[] = {
-    COMPOUND_STRING("KIMMY"),
+    COMPOUND_STRING("MAYA"),
     COMPOUND_STRING("TIARA"),
     COMPOUND_STRING("BELLA"),
     COMPOUND_STRING("JAYLA"),

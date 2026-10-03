@@ -135,10 +135,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    if (IS_FRLG)
-        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB), MAP_NUM(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB), WARP_ID_NONE, 6, 5);
     WarpIntoMap();
 }
 
@@ -216,6 +213,14 @@ void NewGameInitData(void)
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
     else
         RunScriptImmediately(EventScript_ResetAllMapFlags);
+
+    VarSet(VAR_LITTLEROOT_INTRO_STATE, 7);
+    VarSet(VAR_LITTLEROOT_TOWN_STATE, 1);
+    FlagSet(FLAG_SYS_B_DASH);
+    FlagSet(FLAG_VISITED_LITTLEROOT_TOWN);
+    FlagSet(FLAG_RESCUED_BIRCH);
+    FlagSet(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE);
+    FlagSet(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG);
 #if IS_FRLG
         StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
 #endif

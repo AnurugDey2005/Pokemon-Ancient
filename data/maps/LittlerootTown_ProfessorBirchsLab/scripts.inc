@@ -464,12 +464,86 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
+	goto_if_eq VAR_BIRCH_LAB_STATE, 0, LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeeting
+	goto_if_eq VAR_BIRCH_LAB_STATE, 3, LittlerootTown_ProfessorBirchsLab_EventScript_RemindRoute103
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeeting::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_WelcomeToAmbervale, MSGBOX_DEFAULT
+	special ChooseStarter
+	waitstate
+	setvar VAR_BIRCH_LAB_STATE, 3
+	copyvar VAR_STARTER_MON, VAR_RESULT
+	bufferleadmonspeciesname STR_VAR_1
+	message LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarterFirstMeeting
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_CompleteStarterGift
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarterFirstMeeting::
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_CompleteStarterGift
+
+LittlerootTown_ProfessorBirchsLab_EventScript_CompleteStarterGift::
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	giveitem ITEM_POKE_BALL, 10
+	setflag FLAG_SYS_B_DASH
+	setvar VAR_LITTLEROOT_TOWN_STATE, 2
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	clearflag FLAG_HIDE_ROUTE_101_BOY
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExpeditionDispatch, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RemindRoute103::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExpeditionReminder, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_Text_WelcomeToAmbervale:
+	.string "PROF. CYCAD: Welcome to Camp Ambervale,\n"
+	.string "Research Fellow {PLAYER}!\p"
+	.string "Our chronal research team has managed\n"
+	.string "to stabilize three prehistoric POKéMON\l"
+	.string "rescued from deep Cretaceous strata!\p"
+	.string "They need a courageous partner to guide\n"
+	.string "them in this primeval epoch.\p"
+	.string "Come, choose your companion!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ExpeditionDispatch:
+	.string "PROF. CYCAD: A splendid choice!\n"
+	.string "That POKéMON chose you, too.\p"
+	.string "I've registered your POKéDEX, and\n"
+	.string "equipped you with these 10 POKé BALLS\l"
+	.string "and RUNNING SHOES for the field!\p"
+	.string "{RIVAL} set off ahead toward the scenic\n"
+	.string "river bluff at ROUTE 103 for field testing.\l"
+	.string "Head north through ROUTE 101 and meet\l"
+	.string "{RIVAL} out there!\p"
+	.string "Be careful--the prehistoric wilderness\n"
+	.string "is full of wild primordial POKéMON!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ExpeditionReminder:
+	.string "PROF. CYCAD: {RIVAL} is waiting for you\n"
+	.string "up at the river bluff on ROUTE 103.\p"
+	.string "Head north through ROUTE 101 and Oldale\n"
+	.string "to test your prehistoric POKéMON!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT

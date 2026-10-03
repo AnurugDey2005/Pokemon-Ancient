@@ -9505,7 +9505,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9521,7 +9521,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Leafage
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9542,7 +9542,7 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9563,7 +9563,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9579,7 +9579,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Ember
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9600,7 +9600,7 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9621,7 +9621,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9637,7 +9637,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Water Gun
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9658,7 +9658,7 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -9679,7 +9679,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9695,7 +9695,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Leafage
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9716,7 +9716,7 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9737,7 +9737,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9753,7 +9753,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Ember
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9774,7 +9774,7 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9795,7 +9795,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9811,7 +9811,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Water Gun
 
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -9832,7 +9832,7 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -10864,7 +10864,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_TREECKO ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -10881,7 +10881,7 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -10988,7 +10988,7 @@ Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -11005,7 +11005,7 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAY_RUSTBORO_MUDKIP ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -12267,7 +12267,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -12292,7 +12292,7 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -12317,7 +12317,7 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
-Name: BRENDAN
+Name: LEO
 Class: Rival
 Pic: Brendan
 Gender: Male
@@ -12342,7 +12342,7 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -12367,7 +12367,7 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -12392,7 +12392,7 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -14142,7 +14142,7 @@ Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_RUSTBORO_TREECKO ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -14159,7 +14159,7 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
-Name: MAY
+Name: MAYA
 Class: Rival
 Pic: May
 Gender: Female
@@ -16873,7 +16873,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
+Name: LEO
 Class: RS Protag
 Pic: RS Brendan
 Gender: Male
@@ -16885,7 +16885,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_PLACEHOLDER ===
-Name: MAY
+Name: MAYA
 Class: RS Protag
 Pic: RS May
 Gender: Female

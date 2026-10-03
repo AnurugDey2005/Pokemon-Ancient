@@ -259,6 +259,26 @@
      - `README.md` updated with top-level navigation directory links.
      - Decompilation engine files (`Makefile`, `charmap.txt`, `config.mk`, `*.mk`, `check_history.sh`) preserved untouched to guarantee 100% build stability.
 
+### Phase 15: Demo V1 Total Transformation & Canonical Documentation Architecture
+- **Canonical Documentation Suite Established**:
+  - `docs/PROJECT_BIBLE.md`: Official project bible, story synopsis, character bible, region geography, Pokédex plans, and art/audio direction.
+  - `docs/DECISIONS.md`: Architectural decision records.
+  - `docs/CHANGELOG.md`: Versioned change tracking.
+  - `docs/STORY_OUTLINE.md`, `docs/CHARACTER_BIBLE.md`, `docs/REGION_DESIGN.md`, `docs/POKEDEX_DESIGN.md`, `docs/ART_DIRECTION.md`, `docs/AUDIO_DIRECTION.md`, `docs/TECHNICAL_DESIGN.md`, `docs/BALANCE_DESIGN.md`, `docs/QA_PLAN.md`.
+  - `bugs/ACTIVE_BUGS.md`: Bug tracker and verification log.
+
+- **Eradication of Base-ROM Emerald Leftovers**:
+  1. **Moving Truck & Clock Eliminated**: In `src/new_game.c`, redirected `WarpToTruck()` to `MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB` at (6, 5) directly in front of Professor Cycad. Set `VAR_LITTLEROOT_INTRO_STATE = 7` to permanently bypass the truck exit sequence, mom running out, and wall-clock setting.
+  2. **Camp Ambervale Starter Gifting**: In `data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc`, added `LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeeting`. Professor Cycad greets you to Camp Ambervale, opens `special ChooseStarter`, nicknames your starter, registers your Pokédex, awards 10 Poké Balls, and sets `FLAG_SYS_B_DASH` (running shoes).
+  3. **Character & Gender Naming Fixed**: In `src/main_menu.c`, updated `sMenuActions_Gender` so options display `LEO` and `MAYA`. Set `sMalePresetNames[0] = "LEO"` and `sFemalePresetNames[0] = "MAYA"`.
+  4. **Global Rival Naming Overhaul**: In `src/strings.c`, updated `gText_ExpandedPlaceholder_Brendan` to `_("LEO")` and `gText_ExpandedPlaceholder_May` to `_("MAYA")`. In `src/data/trainers.party`, updated all 35 rival team entries to `Name: MAYA` and `Name: LEO`.
+  5. **Authentic Prehistoric Dinosaur Sprites**: In `src/data/pokemon/species_info/ancient_families.h`, replaced all Kanto starter placeholders with authentic prehistoric dinosaur sprites:
+     - **Frillsprout line**: Shieldon -> Bastiodon -> Aggron.
+     - **Pyroraptor line**: Tyrunt -> Aerodactyl -> Tyrantrum.
+     - **Plesioling line**: Amaura -> Lapras -> Aurorus.
+     - Guaranteed 100% GBA PPU Color 0 hardware transparency with zero white box backgrounds.
+  6. **Title Screen Branding**: Overhauled `graphics/title_screen/emerald_version.png` with a metallic gold and amber "ANCIENT VERSION" title banner.
+
 ---
 
 ## 4. Current Status & Deliverables
@@ -277,6 +297,8 @@
 - [x] **Step 13**: Conduct comprehensive research on human ROM hack sprite creation, palette indexing, two-tone grey transparency grid, and GBA PPU hardware transparency.
 - [x] **Step 14**: Guarantee zero white rectangular boxes in-game on all Pokémon sprites and battle scenes.
 - [x] **Step 15**: Implement clean folder sorting (`01_PLAYABLE_GAME`, `02_PROJECT_DOCUMENTATION`, `dev_scripts` consolidation) for Desktop workspace.
+- [x] **Step 16**: Deliver Demo V1 Total Transformation (No truck/clock, Camp Ambervale spawn, Leo/Maya gender menu, authentic dinosaur sprites, Ancient Version title screen).
+
 
 
 
