@@ -1,24 +1,34 @@
-# How to Play Pokémon Ancient (PC & Mobile Guide)
+# How to Play Pokémon Ancient: Dawn of the Primordial Epoch (PC & Mobile Guide)
 
-Welcome to **Pokémon Ancient**! This guide explains how to play the game on your Windows PC and on your mobile device (Android & iOS).
+Welcome to **Pokémon Ancient: Dawn of the Primordial Epoch**! This guide explains how to play the game on your Windows PC and mobile devices (Android & iOS).
 
 ---
 
-## 1. Quick Play on Windows Desktop (One-Click)
+## 1. Direct Download Links (1-Click)
 
-A dedicated launcher shortcut has been created directly on your desktop: **`Run_Pokemon_Ancient.bat`**.
+The compiled Demo V1 ROM and compressed archive are published on the official repository release:
+- **Direct GBA ROM**: [PokemonAncient.gba](https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient.gba) (33.5 MB)
+- **Direct ZIP Package**: [PokemonAncient-ROM.zip](https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient-ROM.zip) (17.5 MB)
+- **Official GitHub Release Page**: [v1.0.0-demo](https://github.com/AnurugDey2005/Pokemon-Ancient/releases/tag/v1.0.0-demo)
 
-1. Double-click **`Run_Pokemon_Ancient.bat`** on your Desktop (or inside `Pokemon Ancient` folder).
-2. The game emulator (**mGBA**) will launch immediately in a clean, smooth game window.
+---
+
+## 2. Quick Play on Windows Desktop
+
+Your compiled game is ready in this folder: `01_PLAYABLE_GAME/PokemonAncient.gba` and in your user `Downloads` directory: `C:\Users\Admin\Downloads\PokemonAncient.gba`.
+
+1. Open your preferred GBA emulator (such as **mGBA**).
+2. Load `PokemonAncient.gba`.
+3. Enjoy the primordial wilderness of Camp Ambervale!
 
 ### Default Controls (PC Keyboard)
 | GBA Button | PC Keyboard Key | Function in Game |
 | :--- | :--- | :--- |
 | **D-Pad Up / Down / Left / Right** | **$\uparrow$ $\downarrow$ $\leftarrow$ $\rightarrow$ Arrow Keys** | Move character in overworld / Navigate menus |
 | **A Button** | **X** | Confirm / Talk / Select / Use move in battle |
-| **B Button** | **Z** | Cancel / Back / Hold to Run |
-| **Start Button** | **Enter** | Open Main Menu (Pokedex, Pokémon, Bag, **SAVE**) |
-| **Select Button** | **Backspace** | Registered Key Item (Field Map, Bicycle) |
+| **B Button** | **Z** | Cancel / Back / Hold to Run (Running Shoes active) |
+| **Start Button** | **Enter** | Open Main Menu (Pokédex, Pokémon, Bag, **SAVE**) |
+| **Select Button** | **Backspace** | Registered Key Item |
 | **L Shoulder** | **A** | Page up in menus / Help |
 | **R Shoulder** | **S** | Page down in menus |
 | **Fast Forward** | **Tab** or **Space** | Speed up grinding and animations |
@@ -28,32 +38,32 @@ A dedicated launcher shortcut has been created directly on your desktop: **`Run_
 
 ---
 
-## 2. How to Play on Mobile (Android via ZArchiver)
+## 3. How to Play on Mobile (Android via ZArchiver)
 
-1. **Transfer the Package**:
-   - Copy `Pokemon_Ancient_Demo.zip` from your computer to your phone (via USB cable, Google Drive, or your MediaFire link).
+1. **Direct Download**:
+   - On your Android phone, tap the direct link: [PokemonAncient-ROM.zip](https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient-ROM.zip) (or [PokemonAncient.gba](https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient.gba)).
 2. **Extract with ZArchiver**:
    - Open **ZArchiver** on your Android phone.
-   - Go to your `Download` (or storage) folder.
-   - Tap `Pokemon_Ancient_Demo.zip` and select **"Extract here"**.
+   - Navigate to your `Download` folder.
+   - Tap `PokemonAncient-ROM.zip` and select **"Extract here"**.
    - You will see `PokemonAncient.gba`.
 3. **Open Your Emulator**:
    - Open **Pizza Boy GBA**, **MyBoy**, or **RetroArch**.
-   - Tap the **Search / Scan** icon. The emulator will automatically detect `Pokemon Ancient`.
-   - Tap to play with touch controls or Bluetooth gamepad!
+   - Select `PokemonAncient.gba`.
+   - Play with on-screen touch controls or a Bluetooth controller!
 
 ---
 
-## 3. How to Play on iOS (iPhone / iPad via Delta)
+## 4. How to Play on iOS (iPhone / iPad via Delta)
 
-1. Send `PokemonAncient.gba` to your iPhone (via AirDrop, iCloud Drive, or Google Drive).
-2. Open the **Delta** emulator (free on the Apple App Store).
+1. Tap [PokemonAncient.gba](https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient.gba) in Safari on iOS.
+2. Open the **Delta** emulator (available on the Apple App Store).
 3. Tap the **+** icon in the top right corner $\rightarrow$ select **Files** $\rightarrow$ choose `PokemonAncient.gba`.
 4. The game will appear in your library ready to play!
 
 ---
 
-## 4. Saving & Save Safety Guarantee
+## 5. Saving & Save Safety Guarantee
 
 * **In-Game Save**: Press **Enter (Start)** $\rightarrow$ choose **SAVE** $\rightarrow$ press **X (A Button)**.
 * **Format**: Standard 128KB Flash (`FLASH1M_V103`). Your save file (`.sav`) is 100% compatible across PC and mobile emulators, so you can freely copy your `.sav` between your PC and phone without losing any progress!
