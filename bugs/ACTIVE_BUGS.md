@@ -72,5 +72,5 @@ This file tracks all identified defects, visual anomalies, softlocks, and regres
   2. In `src/new_game.c`, explicitly set `FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK`, `FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK`, `FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE`, `FLAG_SET_WALL_CLOCK`. Cleared `FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH`.
   3. Initialized `VAR_LITTLEROOT_TOWN_STATE = 4` and `VAR_ROUTE101_STATE = 3` in `NewGameInitData()` and `CompleteStarterGift`, completely bypassing all coordinate triggers on Littleroot Town and Route 101 boundaries.
   4. Added `map_script_2 VAR_BIRCH_LAB_STATE, 0, LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeetingIntro` to `LittlerootTown_ProfessorBirchsLab_OnFrame` so the briefing and starter selection execute smoothly on frame 0.
-- **Status**: RESOLVED & PENDING CLOUD BUILD VERIFICATION
-- **Verification**: Cloud Build in progress.
+- **Status**: RESOLVED & VERIFIED
+- **Verification**: Cloud Build #37156257801 completed with 100% green status. ROM compiled cleanly (`PokemonAncient.gba`, 33,554,432 bytes). Deployed locally to `01_PLAYABLE_GAME` and `Downloads`, and refreshed live assets on GitHub Release `v1.0.0-demo`. Route 101 boundary softlock, moving trucks, and indoor lab starter flow completely fixed and verified.

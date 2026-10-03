@@ -178,6 +178,24 @@
   3. **Seamless Overworld Progression**: Set `VAR_LITTLEROOT_TOWN_STATE = 4` and `VAR_ROUTE101_STATE = 3`. At state 4 in Littleroot Town and state 3 on Route 101, zero coordinate triggers match, allowing the player to walk freely north with zero halts, zero invisible girl movements, and zero freezes.
   4. **Instant OnFrame Lab Briefing (`data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc`)**: Added `map_script_2 VAR_BIRCH_LAB_STATE, 0, LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeetingIntro` to `OnFrame`. Professor Cycad greets the player on frame 0, opens starter selection, prompts for nickname, awards Pokédex, 10 Poké Balls, Running Shoes, and dispatches player to Route 103 river bluff.
 
+### Phase 18: Build Verification, Artifact Extraction & Cloud Release Sync
+- **CI Build Resolution**:
+  - Identified compiler error on `ClearFlag` in `src/new_game.c` from GitHub Actions run `37156066758`.
+  - Replaced all `ClearFlag` calls with the engine's canonical `FlagClear` API in `src/new_game.c`.
+  - Pushed commit `6e125b22` to `main`, triggering GitHub Actions run `37156257801`.
+  - Cloud build completed with **100% green status** (Job: `build-emerald`, `success`).
+- **Deliverables Deployed & Verified**:
+  - Downloaded compiled artifact `PokemonAncient-ROM` (17.5 MB compressed).
+  - Extracted fresh `PokemonAncient.gba` (33,554,432 bytes).
+  - Updated local playable files:
+    - `c:\Users\Admin\Desktop\Pokemon Ancient\01_PLAYABLE_GAME\PokemonAncient.gba`
+    - `c:\Users\Admin\Desktop\Pokemon Ancient\01_PLAYABLE_GAME\PokemonAncient-ROM.zip`
+    - `C:\Users\Admin\Downloads\PokemonAncient.gba`
+    - `C:\Users\Admin\Downloads\PokemonAncient-ROM.zip`
+  - Refreshed GitHub Release `v1.0.0-demo` assets with live download URLs:
+    - `https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient.gba`
+    - `https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient-ROM.zip`
+
 ---
 
 ## 3. Current Status & Deliverables
@@ -199,3 +217,4 @@
 - [x] **Step 15**: Establish canonical Project Bible (`docs/PROJECT_BIBLE.md`) and full documentation suite.
 - [x] **Step 16**: Deliver Demo V1 Total Transformation (Camp Ambervale spawn, no truck/clock, Leo/Maya gender menu, authentic dinosaur sprites, Ancient Version title screen) and publish official GitHub Release `v1.0.0-demo`.
 - [x] **Step 17**: Eradicate BUG-005 (Softlock at Route 101 North Boundary, Two Moving Trucks Outside, and Lab Starter Glitch) with seamless OnFrame briefing, zero-trigger overworld states, and indoor return callback.
+- [x] **Step 18**: Verify Cloud Build #37156257801 (100% green), extract `PokemonAncient.gba`, refresh local deliverables in `01_PLAYABLE_GAME` and `Downloads`, and update GitHub Release `v1.0.0-demo` assets.
