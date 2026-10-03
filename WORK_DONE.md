@@ -196,6 +196,23 @@
     - `https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient.gba`
     - `https://github.com/AnurugDey2005/Pokemon-Ancient/releases/download/v1.0.0-demo/PokemonAncient-ROM.zip`
 
+### Phase 19: Full Prehistoric Visual Transformation (Characters, Starters, Tilesets & Title Screen)
+- **Character Sprites**:
+  - **Professor Cycad**: Replaced vanilla Birch with Dr. Andrea Cycad across both the speech intro presentation (`graphics/birch_speech/birch.png`, 64x64, auburn ponytail, amber goggles, safari field coat) and full 9-frame overworld walking sprite sheet (`graphics/object_events/pics/people/prof_birch.png`, 144x32).
+  - **Leo (Male Protagonist)**: Replaced Brendan with Leo across overworld walking (`graphics/object_events/pics/people/brendan/walking.png`), overworld running (`running.png`), trainer battle front stance (`graphics/trainers/front_pics/brendan.png`), and battle back throw animation (`graphics/trainers/back_pics/brendan.png`, 64x256). Features messy brown hair (no hat), khaki safari jacket, survival pack, dark cargo pants, and boots.
+  - **Maya (Female Protagonist)**: Replaced May with Maya across overworld walking (`graphics/object_events/pics/people/may/walking.png`), overworld running (`running.png`), trainer battle front stance (`graphics/trainers/front_pics/may.png`), and battle back throw animation (`graphics/trainers/back_pics/may.png`, 64x256). Features green expedition bandana, flowing dark hair, field vest, utility belt, cargo shorts, and boots.
+- **Overworld Primordial Tileset Overhaul**:
+  - Primary general palettes (`01.pal`, `02.pal`, `03.pal`): Transformed neon green grass and flat dirt into lush Jurassic moss greens, ancient amber clay trails, petrified redwood bark, cycad canopies, and warm golden sandstone strata.
+  - Secondary town palettes (`06.pal`, `08.pal`): Transformed suburban roofs and siding into Camp Ambervale expedition canvas tents, olive waterproof tarps, cedar timber framing, and glowing amber lanterns.
+- **Starter Fakemon Custom Sprites & Overworld Follower Sprites**:
+  - Authored bespoke overworld follower sprites (192x32) and tailored battle/overworld palettes for all 3 prehistoric starters:
+    - **Frillsprout** (Ceratopsian Grass/Rock with fern frill and stone horns)
+    - **Pyroraptor** (Feathered Theropod Fire/Dark with ember plumage and obsidian claws)
+    - **Plesioling** (Sauropterygian Water/Dragon with azure scales, turquoise bioluminescent ridges, long neck)
+- **Title Screen Primordial Atmosphere**:
+  - Updated `graphics/title_screen/rayquaza_and_clouds.pal` with a dramatic Primordial Volcanic Dawn / Amber Twilight palette.
+  - Transformed `graphics/title_screen/rayquaza.png` into the imposing silhouette of the Apex Titan / Primordial Colossus rising above ancient mist.
+
 ---
 
 ## 3. Current Status & Deliverables
@@ -218,3 +235,4 @@
 - [x] **Step 16**: Deliver Demo V1 Total Transformation (Camp Ambervale spawn, no truck/clock, Leo/Maya gender menu, authentic dinosaur sprites, Ancient Version title screen) and publish official GitHub Release `v1.0.0-demo`.
 - [x] **Step 17**: Eradicate BUG-005 (Softlock at Route 101 North Boundary, Two Moving Trucks Outside, and Lab Starter Glitch) with seamless OnFrame briefing, zero-trigger overworld states, and indoor return callback.
 - [x] **Step 18**: Verify Cloud Build #37156257801 (100% green), extract `PokemonAncient.gba`, refresh local deliverables in `01_PLAYABLE_GAME` and `Downloads`, and update GitHub Release `v1.0.0-demo` assets.
+- [x] **Step 19**: Deploy Complete Prehistoric Visual Suite: Professor Cycad sprites, Leo/Maya overworld & battle back sprites, Camp Ambervale expedition tent tilesets, primordial Jurassic earth palettes, starter overworld sprites, and Apex Titan title screen.
