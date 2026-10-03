@@ -167,6 +167,17 @@
   - `C:\Users\Admin\Downloads\PokemonAncient-ROM.zip`
 - **Bug Status**: BUG-001, BUG-002, BUG-003, and BUG-004 marked as RESOLVED & VERIFIED.
 
+### Phase 17: Critical Softlock Eradication & Seamless Overworld Flow (BUG-005)
+- **Root Cause Analysis**:
+  1. **Lab Starter Glitch**: `special ChooseStarter` in pokeemerald hardcoded `gMain.savedCallback = CB2_GiveStarter`, which immediately invoked `CB2_StartFirstBattle` (the wild Zigzagoon battle) inside the indoor lab where no wild encounter tiles exist.
+  2. **Two Moving Trucks Rendered Outside**: In vanilla Emerald, one truck is hidden at startup and the second is hidden when stepping off the truck. Bypassing the truck scene without explicitly setting `FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK` and `FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK` caused both trucks to render outside the houses.
+  3. **Route 101 Boundary Softlock**: Littleroot Town northern exit coordinate triggers at (10, 1) and (11, 1) were active because `VAR_LITTLEROOT_TOWN_STATE` was 1 or 0, calling `applymovement` on `LOCALID_LITTLEROOT_TWIN`. Similarly, `VAR_ROUTE101_STATE == 1` at (10, 19) called `applymovement` on `LOCALID_ROUTE101_BIRCH` and `LOCALID_ROUTE101_ZIGZAGOON` which were hidden, causing `waitmovement 0` to hang indefinitely.
+- **Surgical Solutions Implemented**:
+  1. **Indoor Starter Return (`src/battle_setup.c`)**: Modified `CB2_GiveStarter()` to detect if the player is inside `MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB`. If so, it gives the starter Pokémon to party and returns seamlessly via `SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic)` without launching any wild battle in the lab.
+  2. **Trucks & Mom Permanently Hidden (`src/new_game.c`)**: Explicitly set `FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK`, `FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK`, and `FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE`. Cleared `FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH` so Professor Cycad is immediately visible.
+  3. **Seamless Overworld Progression**: Set `VAR_LITTLEROOT_TOWN_STATE = 4` and `VAR_ROUTE101_STATE = 3`. At state 4 in Littleroot Town and state 3 on Route 101, zero coordinate triggers match, allowing the player to walk freely north with zero halts, zero invisible girl movements, and zero freezes.
+  4. **Instant OnFrame Lab Briefing (`data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc`)**: Added `map_script_2 VAR_BIRCH_LAB_STATE, 0, LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeetingIntro` to `OnFrame`. Professor Cycad greets the player on frame 0, opens starter selection, prompts for nickname, awards Pokédex, 10 Poké Balls, Running Shoes, and dispatches player to Route 103 river bluff.
+
 ---
 
 ## 3. Current Status & Deliverables
@@ -187,3 +198,4 @@
 - [x] **Step 14**: Implement clean folder sorting (`01_PLAYABLE_GAME`, `02_PROJECT_DOCUMENTATION`, `dev_scripts` consolidation) for Desktop workspace.
 - [x] **Step 15**: Establish canonical Project Bible (`docs/PROJECT_BIBLE.md`) and full documentation suite.
 - [x] **Step 16**: Deliver Demo V1 Total Transformation (Camp Ambervale spawn, no truck/clock, Leo/Maya gender menu, authentic dinosaur sprites, Ancient Version title screen) and publish official GitHub Release `v1.0.0-demo`.
+- [x] **Step 17**: Eradicate BUG-005 (Softlock at Route 101 North Boundary, Two Moving Trucks Outside, and Lab Starter Glitch) with seamless OnFrame briefing, zero-trigger overworld states, and indoor return callback.

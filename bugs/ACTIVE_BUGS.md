@@ -52,3 +52,25 @@ This file tracks all identified defects, visual anomalies, softlocks, and regres
 - **Assigned Fix**: Replaced all starter sprite and palette pointers in `ancient_families.h` with authentic prehistoric dinosaur assets (Shieldon line for Frillsprout, Tyrunt line for Pyroraptor, Amaura line for Plesioling) with verified GBA hardware transparency.
 - **Status**: RESOLVED & VERIFIED
 - **Verification**: Verified in Cloud Build #37154253999 / Release v1.0.0-demo.
+
+---
+
+### BUG-005: Softlock at Route 101 North Boundary, Two Moving Trucks Outside, and Lab Starter Glitch
+- **Severity**: Critical (Hard Softlock & Visual Immersion Break)
+- **Area**: `src/battle_setup.c`, `src/new_game.c`, `data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc`, `data/maps/LittlerootTown/map.json`, `data/maps/Route101/scripts.inc`
+- **Build/Version**: 1.0.0-demo
+- **Steps to Reproduce**:
+  1. Boot game, start in lab. When starter was chosen or talked to, `special ChooseStarter` called `CB2_StartFirstBattle` launching a wild Zigzagoon battle inside the indoor lab.
+  2. Leaving the lab revealed two moving trucks parked outside both player and rival houses.
+  3. Walking north to Route 101 triggered coordinate events with `VAR_LITTLEROOT_TOWN_STATE` or `VAR_ROUTE101_STATE == 1` which called `applymovement` on displaced/hidden objects (`LOCALID_LITTLEROOT_TWIN`, `LOCALID_ROUTE101_BIRCH`, `LOCALID_ROUTE101_ZIGZAGOON`), causing `waitmovement 0` to hang indefinitely. Player was frozen and unable to move up.
+- **Expected Result**:
+  1. Professor Cycad immediately addresses player via `OnFrame` script in lab, hands over chosen prehistoric starter smoothly with no wild battle in the lab.
+  2. Zero trucks outside (both truck flags permanently hidden).
+  3. Player walks freely north onto Route 101 with zero coordinate trigger softlocks or freezes.
+- **Assigned Fix**:
+  1. Updated `CB2_GiveStarter` in `src/battle_setup.c` to check if player is inside `MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB`. If so, calls `SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic)` to return cleanly to the field script without launching a wild battle in the lab.
+  2. In `src/new_game.c`, explicitly set `FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK`, `FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK`, `FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE`, `FLAG_SET_WALL_CLOCK`. Cleared `FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH`.
+  3. Initialized `VAR_LITTLEROOT_TOWN_STATE = 4` and `VAR_ROUTE101_STATE = 3` in `NewGameInitData()` and `CompleteStarterGift`, completely bypassing all coordinate triggers on Littleroot Town and Route 101 boundaries.
+  4. Added `map_script_2 VAR_BIRCH_LAB_STATE, 0, LittlerootTown_ProfessorBirchsLab_EventScript_FirstMeetingIntro` to `LittlerootTown_ProfessorBirchsLab_OnFrame` so the briefing and starter selection execute smoothly on frame 0.
+- **Status**: RESOLVED & PENDING CLOUD BUILD VERIFICATION
+- **Verification**: Cloud Build in progress.
